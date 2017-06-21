@@ -26,9 +26,14 @@ public class Tokenizator {
                     temporaryTokenList.add(tokens.get(j));
                 }
 
+                System.out.println(temporaryTokenList);
+                System.out.println(tokenListToCompare);
+
                 if (temporaryTokenList.equals(tokenListToCompare)) {
                     return true;
                 }
+
+                temporaryTokenList.clear();
             }
         }
         return false;

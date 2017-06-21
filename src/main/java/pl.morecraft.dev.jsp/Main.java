@@ -28,9 +28,10 @@ public class Main {
         checkpoint.append(Search.lookForClass(tokens, String.valueOf(className)));
         checkpoint.append(Search.lookForPSVM(tokens, psvmMethod));
         checkpoint.append(Search.lookforMethod(tokens, methodName));
-//        System.out.println(checkpoint); //TODO - nie bangla lookForPSVM i LookForMethod...
         checkpoint.append(Search.checkForBrackets(tokens));
 
         ReportCreator.finalCheck(checkpoint, index);
+
+        System.out.println(checkpoint);
     }
 }

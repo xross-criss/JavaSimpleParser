@@ -5,6 +5,7 @@ import java.util.List;
 
 public class ReportCreator {
     public static void finalCheck(StringBuilder checkpoint, String index) {
+        String filename = "__raport.txt";
         List<String> reportList = new ArrayList<>();
         String sb = index + " - ";
         char[] list = checkpoint.toString().toCharArray();
@@ -20,6 +21,6 @@ public class ReportCreator {
             reportList.add(sb + "ok");
         }
 
-        IO.saveReportToFile(reportList);
+        IO.saveReportToFile(reportList, filename);
     }
 }
