@@ -1,9 +1,6 @@
 package pl.morecraft.dev.jsp.engine;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -29,7 +26,27 @@ public class IO {
         return null;
     }
 
-    public static void saveReportToFile(List<String> reportList) {
+    public static void saveReportToFile(List<String> reportList, String filename) {
+        try {
 
+            File file = new File(filename);
+
+            if (!file.exists()) {
+                if (file.createNewFile()) {
+                    throw new IOException("File could not be created");
+                }
+            } else {
+                System.out.println("File [" + filename + "] overwritten!");
+            }
+
+            FileWriter fw = new FileWriter(file.getAbsoluteFile());
+            BufferedWriter bw = new BufferedWriter(fw);
+
+            bw.write(reportList.toString());
+
+            bw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
