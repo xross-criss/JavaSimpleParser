@@ -42,11 +42,14 @@ public class IO {
             FileWriter fw = new FileWriter(file.getAbsoluteFile());
             BufferedWriter bw = new BufferedWriter(fw);
 
-            bw.write(reportList.toString());
+            for (String s : reportList) {
+                bw.write(s.toString());
+            }
+            //bw.write(reportList.toString());
 
             bw.close();
         } catch (IOException e) {
-            e.printStackTrace();
+
         }
     }
 }

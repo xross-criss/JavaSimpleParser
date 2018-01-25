@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ReportCreator {
     public static void finalCheck(StringBuilder checkpoint, String index) {
-        String filename = "__raport.txt";
+        String filename = "src/main/java/test/__raport.txt";
         List<String> reportList = new ArrayList<>();
         String sb = index + " - ";
         char[] list = checkpoint.toString().toCharArray();
